@@ -4,10 +4,11 @@
 
 This site has been established to isolate and test various issues with documentation build using the following components:
 
-1. Doxygen
-2. Sphinx
-3. Breathe
-4. Read the Docs
+1. [Doxygen](http://www.stack.nl/~dimitri/doxygen/)
+2. [Sphinx](http://www.sphinx-doc.org/en/stable/index.html)
+3. [Breathe](http://breathe.readthedocs.io/en/latest/)
+4. [Read the Docs](https://readthedocs.org)
+
 
 ## Purpose
 
