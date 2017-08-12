@@ -1,9 +1,12 @@
 Code snippets inside Doxygen comments cause failure of Breathe 4.7.0
 ====================================================================
 
+- Reported in https://github.com/michaeljones/breathe/issues/344
+- Resolved in https://github.com/michaeljones/breathe/pull/345
 
-Issue desription
-^^^^^^^^^^^^^^^^
+
+Issue description
+^^^^^^^^^^^^^^^^^
 
 If code snippets are included inside Doxygen's comments, then Breathe fails with the following message::
 
@@ -28,7 +31,7 @@ Doxygen directive that fails
 Header file that contains code causing failure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-https://github.com/krzychb/rtd-test-bed/headers/nvs.h
+https://github.com/krzychb/rtd-test-bed/blob/master/headers/nvs.h
 
 
 Details of packages that cause failure
