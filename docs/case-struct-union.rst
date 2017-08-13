@@ -1,13 +1,16 @@
-Incorrect rendering of a struct with union - 'Expected identifier in nested name'
-=================================================================================
+Incorrect rendering of a struct with unnamed union - 'Expected identifier in nested name'
+=========================================================================================
 
-- Reported in https://github.com/michaeljones/breathe/issues/346
+- Reported in: 
+
+    - https://github.com/michaeljones/breathe/issues/346
+    - https://github.com/sphinx-doc/sphinx/issues/2683
 
 
 Issue description
 ^^^^^^^^^^^^^^^^^
 
-When a header file contains definition of a structure with union as follows:
+When a header file contains definition of a structure with an unnamed union, for example:
 
 .. code-block:: c
 
@@ -87,7 +90,12 @@ Breathe 4.7.0::
 This problem exists with previous versions of Sphinx / Breathe, e.g. Sphinx 1.5.6 and Breathe 4.6.0.
 
 
-Possible, kind of a workaround
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Possible workarounds
+^^^^^^^^^^^^^^^^^^^^
 
-Do not use ``:members:`` in ``.. doxygenstruct::`` directive.
+- Following https://github.com/sphinx-doc/sphinx/issues/2683, assign a name to unnamed union. For example see https://github.com/krzychb/rtd-test-bed/blob/master/headers/esp_bt_defs.h, ``give_me_a_name``:
+
+    .. doxygenstruct:: esp_bt_uuid_t
+        :members:
+
+- Do not use ``:members:`` in ``.. doxygenstruct::`` directive
