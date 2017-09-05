@@ -7,6 +7,7 @@ Welcome to rtd-test-bed's documentation!
 
     case-struct-union
     case-code-snippet
+    case-type-or-concept
 
 
 Indices and tables
