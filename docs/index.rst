@@ -6,8 +6,8 @@ Welcome to rtd-test-bed's documentation!
     :caption: Test Cases:
 
     case-struct-union
-    case-code-snippet
     case-type-or-concept
+    case-code-snippet
 
 
 Indices and tables

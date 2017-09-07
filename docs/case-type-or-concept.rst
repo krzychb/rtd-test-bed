@@ -7,6 +7,9 @@
     - https://github.com/sphinx-doc/sphinx/issues/4041
     - https://github.com/sphinx-doc/sphinx/pull/3894 (similar warning)
 
+- Resolved in: 
+
+    - https://github.com/sphinx-doc/sphinx/commit/c0f84295b685a6b7f12024ea64721708480dc227
 
 
 Issue description
