@@ -35,7 +35,17 @@ call('doxygen')
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['breathe', 'sphinxcontrib.blockdiag']
+extensions = ['breathe',
+              'sphinxcontrib.blockdiag',
+              'sphinxcontrib.nwdiag',
+              'sphinxcontrib.rackdiag',
+              'sphinxcontrib.packetdiag' ]
+
+# Set up font for blockdiag, nwdiag, rackdiag and packetdiag
+blockdiag_fontpath = '_static/Menlo.ttc'
+nwdiag_fontpath = '_static/Menlo.ttc'
+nwdiag_rackdiag = '_static/Menlo.ttc'
+packetdiag_fontpath = '_static/Menlo.ttc'
 
 # Breathe extension variables
 breathe_projects = { "esp32-idf": "xml/" }
