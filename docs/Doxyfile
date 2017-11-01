@@ -19,8 +19,8 @@ INPUT = \
     ../headers/nvs.h \
     ../headers/esp_a2dp_api.h \
     ../headers/esp_bt_defs.h \
-    ../headers/sdmmc_types.h
-
+    ../headers/sdmmc_types.h \
+    ../headers/manual.c \
 
 ## Get warnings for functions that have no documentation for their parameters or return value
 ##

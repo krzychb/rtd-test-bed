@@ -5,6 +5,8 @@ Welcome to rtd-test-bed's documentation!
     :maxdepth: 2
     :caption: Test Cases:
 
+    test-block-diagram
+    case-manual
     case-struct-union
     case-type-or-concept
     case-code-snippet
