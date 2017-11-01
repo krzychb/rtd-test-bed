@@ -37,12 +37,14 @@ call('doxygen')
 # ones.
 extensions = ['breathe',
               'sphinxcontrib.blockdiag',
+              'sphinxcontrib.seqdiag',
               'sphinxcontrib.nwdiag',
               'sphinxcontrib.rackdiag',
               'sphinxcontrib.packetdiag' ]
 
 # Set up font for blockdiag, nwdiag, rackdiag and packetdiag
 blockdiag_fontpath = '_static/Menlo.ttc'
+seqdiag_fontpath = '_static/Menlo.ttc'
 nwdiag_fontpath = '_static/Menlo.ttc'
 nwdiag_rackdiag = '_static/Menlo.ttc'
 packetdiag_fontpath = '_static/Menlo.ttc'
