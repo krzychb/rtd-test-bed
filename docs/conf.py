@@ -38,15 +38,18 @@ call('doxygen')
 extensions = ['breathe',
               'sphinxcontrib.blockdiag',
               'sphinxcontrib.seqdiag',
+              'sphinxcontrib.actdiag',
               'sphinxcontrib.nwdiag',
               'sphinxcontrib.rackdiag',
-              'sphinxcontrib.packetdiag' ]
+              'sphinxcontrib.packetdiag'
+             ]
 
 # Set up font for blockdiag, nwdiag, rackdiag and packetdiag
 blockdiag_fontpath = '_static/DejaVuSans.ttf'
 seqdiag_fontpath = '_static/DejaVuSans.ttf'
+actdiag_fontpath = '_static/DejaVuSans.ttf'
 nwdiag_fontpath = '_static/DejaVuSans.ttf'
-nwdiag_rackdiag = '_static/DejaVuSans.ttf'
+rackdiag_fontpath = '_static/DejaVuSans.ttf'
 packetdiag_fontpath = '_static/DejaVuSans.ttf'
 
 # Breathe extension variables
