@@ -16,3 +16,8 @@ Doxygen Test Suite
 .. doxygenstruct:: Truck
 
 
+Application Examples
+--------------------
+
+* :example:`Hello World! <get-started/hello_world>`
+* :example:`get-started/hello_world`

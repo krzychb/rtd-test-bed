@@ -12,13 +12,16 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
+import sys, os
+import re
+from subprocess import call, Popen, PIPE
+import shlex
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+
+sys.path.insert(0, os.path.abspath('.'))
 
 # Call Doxygen to get XML files from the header files
 from subprocess import call
@@ -36,6 +39,7 @@ call('doxygen')
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['breathe',
+              'link-roles',
               'sphinxcontrib.blockdiag',
               'sphinxcontrib.seqdiag',
               'sphinxcontrib.actdiag',
@@ -87,7 +91,7 @@ release = u'1'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
