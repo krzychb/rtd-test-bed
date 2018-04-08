@@ -9,6 +9,7 @@ Welcome to rtd-test-bed's documentation!
 
     test-diagrams
     case-manual
+    case-tables
 
 .. toctree::
     :maxdepth: 2

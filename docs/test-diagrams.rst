@@ -155,7 +155,7 @@ blockdiag - example 2
 
 **New implementation**
 
-::
+.. blockdiag::
 
     blockdiag wifi_programming_model {
 
