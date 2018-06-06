@@ -157,21 +157,21 @@ blockdiag - example 2
 
 .. blockdiag::
 
-    blockdiag wifi_programming_model {
+    blockdiag wifi-programming-model {
 
         # global attributes
-        node_width = 120;
         node_height = 60;
-        span_height = 60;
+        node_width = 100;
         span_width = 100;
+        span_height = 60;
         default_shape = roundedbox;
         default_group_color = none;
 
         # node labels
-        TCP_STACK [label="TCP\n stack", fontsize=14];
-        EVNT_TASK [label="event\n task", fontsize=14];
-        APPL_TASK [label="application\n task", fontsize=14, width=130];
-        WIFI_DRV  [label="Wi-Fi\n Driver", fontsize=14];
+        TCP_STACK [label="TCP\n stack", fontsize=12];
+        EVNT_TASK [label="Event\n task", fontsize=12];
+        APPL_TASK [label="Application\n task", width = 120, fontsize=12];
+        WIFI_DRV  [label="Wi-Fi\n Driver", width = 120, fontsize=12];
         KNOT [shape=none];
 
         # node connections + labels
@@ -198,21 +198,21 @@ blockdiag - example 2
 
 ::
 
-    blockdiag wifi_programming_model {
+    blockdiag wifi-programming-model {
 
         # global attributes
-        node_width = 120;
         node_height = 60;
-        span_height = 60;
+        node_width = 100;
         span_width = 100;
+        span_height = 60;
         default_shape = roundedbox;
         default_group_color = none;
 
         # node labels
-        TCP_STACK [label="TCP\n stack", fontsize=14];
-        EVNT_TASK [label="event\n task", fontsize=14];
-        APPL_TASK [label="application\n task", fontsize=14, width=130];
-        WIFI_DRV  [label="Wi-Fi\n Driver", fontsize=14];
+        TCP_STACK [label="TCP\n stack", fontsize=12];
+        EVNT_TASK [label="Event\n task", fontsize=12];
+        APPL_TASK [label="Application\n task", width = 120, fontsize=12];
+        WIFI_DRV  [label="Wi-Fi\n Driver", width = 120, fontsize=12];
         KNOT [shape=none];
 
         # node connections + labels
@@ -235,7 +235,7 @@ blockdiag - example 2
         WIFI_DRV <- KNOT [label="API\n call"];
     }
 
-Bring this code to the `interactive shell <http://interactive.blockdiag.com/?compression=deflate&src=eJyFk09P40AMxe98CqscIVILq72UIFX8kSoQWy0RHABFTuImFtOZaGYKuyC-O840bagaRI7Pfs7Pz0mmTP5cMJbwynNOa2tKi4sF6zJdmIIUvO_tgTz7UCqToQL03nK29OSCrqUpfeXCVxDD6Gg47tSKuKy8yL9b1dWov1E3E4atWtAcl8qnrsKapGDNUhdUZObfdr2UQp3mRhkrXdpoGq-BGwhQmJFaoSZns_Q2mZxdwUNQ44Eojxqcx_x5cAhzo73jN4pHv55WL7m4u0nSZHLbOeiFtBePR9dvmcxm19sWrGvFOXo2utd4CGH5eHQ8bGfcTy-n6fnfO9jMuOfoksV9bvmFbO-Lr27-JPAQ4oqbGJ62c8iN1pQ3EA4O-lOJTncXDvvupCGdu3vmqFQmSQqm3CIYBx0EWou6pADjQJbw3Bj-h3I4onxpsHrCQLnmoD0yVKgLJXuP1x3GsowPmUpfbay3yH5T7khPoi7NnpU-1nisPdkFyY_gV4x9XB3Y0pHdpfoJ60toURQOtqbYuvpJ1B6zDXYym0qmTVpNnh-fpWcbRA>`__ and try out some modifications. 
+Bring this code to the `interactive shell <http://interactive.blockdiag.com/?compression=deflate&src=eJyFk09PwkAQxe98igketQl48IKYENCEaJBoowckzbYd2onLbrO74L_43Z0ulEpa4x7fzpv-5s02ljp5TUlk8EYrCgqjMyPWa1JZsNYpSvjqdIDPCWRSx0KCcM5QvHFova64KMqRstzBEC56g1p9o9TlLPZ7e9UWQv2hNjqkuBIb6SKbiwJZN3qjUkxj_X58n_FFESVaasNVSiscVMAlBEgRo9yhhuN59BiOxrew8Oqwy8qLAutE8to9g5VWztInDvvny91Hrp9mYRSOHmvH9RaVY48Ttt0yms_vji2jopCUCEda1cZDCue9ti7P05tpNHl4gkOXZwpuiP0TQ1s0_3e4nd2HsPDpDctUlsexJFopTEomC6ftIQVXzfmxHL8RDlc2x06ElDEHy8y8Gm_s1hDCGKEy9DAWeCJHpeHDX_ud8sOD3fENedLufueQC5VKDmFQVWhD3N5HzHWFNs4IcofrmvQyqKNtGem7wiPl0KyR_wu3Y2zjqsE2Fk2T6j-sX6EFgV9YRXH0BC6D_TKr9zSfcqZlWmWe350fB2weWw>`__ and try out some modifications. 
 
 
 blockdiag - example 3
