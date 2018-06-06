@@ -734,23 +734,27 @@ http://blockdiag.com/en/seqdiag/index.html
 
 .. seqdiag::
 
-    seqdiag scan_for_spec_ap {
+    seqdiag foreground-scan-all-channels {
         activation = none;
+        node_width = 80;
+        node_height = 60;
         edge_length = 160;
-        span_height = 15;
+        span_height = 5;
         default_shape = roundedbox;
         default_fontsize = 12; 
 
-        app_task; event_task; Wi-Fi_task; 
+        APP_TASK   [label = "App\ntask"];
+        EVENT_TASK [label = "Event\ntask"];
+        WIFI_TASK  [label = "Wi-Fi\ntask"];
 
-        app_task   -> Wi-Fi_task [label="1.1 > Configure country code"];
-        app_task   -> Wi-Fi_task [label="1.2 > Scan configuration"];
-        Wi-Fi_task -> Wi-Fi_task [label="2.1 > Scan channel 1"];
-        Wi-Fi_task -> Wi-Fi_task [label="2.2 > Scan channel 2"];
-        Wi-Fi_task -> Wi-Fi_task [label="..."];
-        Wi-Fi_task -> Wi-Fi_task [label="2.N > Scan channel N"];
-        event_task <- Wi-Fi_task [label="3.1 > SYSTEM_EVENT_SCAN_DONE"];
-        app_task <- event_task [label="3.2 > SYSTEM_EVENT_SCAN_DONE"];
+        APP_TASK   ->  WIFI_TASK  [label="1.1 > Configure country code"];
+        APP_TASK   ->  WIFI_TASK  [label="1.2 > Scan configuration"];
+        WIFI_TASK  ->  WIFI_TASK  [label="2.1 > Scan channel 1"];
+        WIFI_TASK  ->  WIFI_TASK  [label="2.2 > Scan channel 2"];
+        WIFI_TASK  ->  WIFI_TASK  [label="..."];
+        WIFI_TASK  ->  WIFI_TASK  [label="2.x > Scan channel N"];
+        EVENT_TASK <-  WIFI_TASK  [label="3.1 > SYSTEM_EVENT_SCAN_DONE"];
+        APP_TASK   <-  EVENT_TASK [label="3.2 > SYSTEM_EVENT_SCAN_DONE"];
     }
 
 
@@ -758,23 +762,27 @@ http://blockdiag.com/en/seqdiag/index.html
 
 ::
 
-    seqdiag scan_for_spec_ap {
+    seqdiag foreground-scan-all-channels {
         activation = none;
+        node_width = 80;
+        node_height = 60;
         edge_length = 160;
-        span_height = 15;
+        span_height = 5;
         default_shape = roundedbox;
         default_fontsize = 12; 
 
-        app_task; event_task; Wi-Fi_task; 
+        APP_TASK   [label = "App\ntask"];
+        EVENT_TASK [label = "Event\ntask"];
+        WIFI_TASK  [label = "Wi-Fi\ntask"];
 
-        app_task   -> Wi-Fi_task [label="1.1 > Configure country code"];
-        app_task   -> Wi-Fi_task [label="1.2 > Scan configuration"];
-        Wi-Fi_task -> Wi-Fi_task [label="2.1 > Scan channel 1"];
-        Wi-Fi_task -> Wi-Fi_task [label="2.2 > Scan channel 2"];
-        Wi-Fi_task -> Wi-Fi_task [label="..."];
-        Wi-Fi_task -> Wi-Fi_task [label="2.N > Scan channel N"];
-        event_task <- Wi-Fi_task [label="3.1 > SYSTEM_EVENT_SCAN_DONE"];
-        app_task <- event_task [label="3.2 > SYSTEM_EVENT_SCAN_DONE"];
+        APP_TASK   ->  WIFI_TASK  [label="1.1 > Configure country code"];
+        APP_TASK   ->  WIFI_TASK  [label="1.2 > Scan configuration"];
+        WIFI_TASK  ->  WIFI_TASK  [label="2.1 > Scan channel 1"];
+        WIFI_TASK  ->  WIFI_TASK  [label="2.2 > Scan channel 2"];
+        WIFI_TASK  ->  WIFI_TASK  [label="..."];
+        WIFI_TASK  ->  WIFI_TASK  [label="2.x > Scan channel N"];
+        EVENT_TASK <-  WIFI_TASK  [label="3.1 > SYSTEM_EVENT_SCAN_DONE"];
+        APP_TASK   <-  EVENT_TASK [label="3.2 > SYSTEM_EVENT_SCAN_DONE"];
     }
 
-Bring this code to the `interactive shell <http://interactive.blockdiag.com/seqdiag/?compression=deflate&src=eJyVkU1PwzAMhu_7FdburUgQXMomTaPcKIdOIIRQlDVuG1EloUknPsR_J2s2rRsT2nKJ9drvY8ex-C4kr8AWXLFSt8waLBg38D0Cf3jh5Io7qRVMQGmFSS-jqJA1qCpXe51cXwTZGg-pUVa1W8tXQRVY8q5xzNbcoNdb3SmBYqk_9vOlVs7Kr3UJoQmMwgDGMMftWwK4QuU28ZOM7uQm3q_zYTQd5OGl4UtsJmMSE5jCXKtSVl2LUPgpXPvpb4Hj1-RUCPWQ3O_K-wKpX84WMLAcB9B-igCouVLYADnDTA_N9GRzHMdnNMoOG2Vb8-4b4CY6Zr4MT3zOF-k9Sx_TbMHy-Sxjtw9Z-mfRHjEA7hD0X8TPLxU91AQ>`__ and try out some modifications. 
+Bring this code to the `interactive shell <http://interactive.blockdiag.com/seqdiag/?compression=deflate&src=eJyVklFLwzAUhd_3K8LeW2xFEeYGZXYwxDrocAyVkjW3bTDc1CabU_G_mzUbdbPK1peUc8_57k1vFbwyTnOSyQrySi6ROSql6FAhnLSgiCAU-ewQ89BU8xXVXCLpE5QIvVpGySB540wXRr46-yEWwPNCG_VyqwLLIRGAee31drIqKTbmCysyyOhS6EQVtAQj17MBW8j1fj2TqBX_2Fg8v0c6dTGYTJJpEN-a10dBFyBMtRuU5RNqql66zxYRPoTR1PoaV7gC1Pu-2Xg03uIa34w7I974Dts6g5Zcv-u5HhmQocSM58sKSGpupat3czLYtTuG4htKbPZkghZV76Vl4D8Ifj2HJdgtE--UtH-Y9o9Pu657Sqv1YauoZX_XTmv63F5zHk_Du8Ta42EQJTf3UdjyuTeUXz_FhuL_S_nqfAO-G-0c>`__ and try out some modifications. 
