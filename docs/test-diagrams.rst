@@ -786,3 +786,44 @@ http://blockdiag.com/en/seqdiag/index.html
     }
 
 Bring this code to the `interactive shell <http://interactive.blockdiag.com/seqdiag/?compression=deflate&src=eJyVklFLwzAUhd_3K8LeW2xFEeYGZXYwxDrocAyVkjW3bTDc1CabU_G_mzUbdbPK1peUc8_57k1vFbwyTnOSyQrySi6ROSql6FAhnLSgiCAU-ewQ89BU8xXVXCLpE5QIvVpGySB540wXRr46-yEWwPNCG_VyqwLLIRGAee31drIqKTbmCysyyOhS6EQVtAQj17MBW8j1fj2TqBX_2Fg8v0c6dTGYTJJpEN-a10dBFyBMtRuU5RNqql66zxYRPoTR1PoaV7gC1Pu-2Xg03uIa34w7I974Dts6g5Zcv-u5HhmQocSM58sKSGpupat3czLYtTuG4htKbPZkghZV76Vl4D8Ifj2HJdgtE--UtH-Y9o9Pu657Sqv1YauoZX_XTmv63F5zHk_Du8Ta42EQJTf3UdjyuTeUXz_FhuL_S_nqfAO-G-0c>`__ and try out some modifications. 
+
+
+.. seqdiag::
+    :caption: Typical Provisioning Process
+    :align: center
+
+    seqdiag typical-prov-process {
+        activation = none;
+        node_width = 80;
+        node_height = 60;
+        edge_length = 280;
+        span_height = 5;
+        default_shape = roundedbox;
+        default_fontsize = 12;
+
+        CLIENT  [label = "Client"];
+        DEVICE  [label = "Device"];
+
+        === 1. Transport specific discovery and connection ===
+        DEVICE -> CLIENT [label="Some form of beaconing"];
+        CLIENT -> DEVICE [label="Client connects"];
+        === 2. Session Establishment ====
+        CLIENT -> DEVICE [label="Get Version Request"];
+        DEVICE -> CLIENT [label="Get Version Response"];
+        CLIENT -> DEVICE [label="Session Setup Request"];
+        DEVICE -> CLIENT [label="Session Setup Response"];
+        CLIENT --> DEVICE;
+        DEVICE --> CLIENT [note = "One or multiple steps as per protocol"];
+        === 3. Configuration ===
+        CLIENT --> DEVICE [label="App specific Set Config (optional)"];
+        DEVICE --> CLIENT [label="Set Config Response (optional)"];
+        CLIENT -> DEVICE [label="Wi-Fi SetConfig(SSID, Passphrase...)"];
+        DEVICE -> CLIENT [label="Wi-Fi SetConfig response"];
+        CLIENT -> DEVICE [label="Wi-Fi ApplyConfig cmd"];
+        DEVICE -> CLIENT [label="Wi-Fi ApplyConfig resp"];
+        CLIENT -> DEVICE [label="Wi-Fi GetStatus cmd (repeated)"];
+        DEVICE -> CLIENT [label="Wi-Fi GetStatus resp (repeated)"];
+        === 4. Close connection ===
+        DEVICE -> CLIENT [label="Close Connection"];
+    }
+
