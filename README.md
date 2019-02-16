@@ -64,6 +64,7 @@ You can do it on Linux, Windows running [MSYS2](http://www.msys2.org/) and MacOS
 4.  Now you should be ready to build documentation by invoking:
 
     ```
+    cd en
     make html
     ```
 

@@ -1,0 +1,1 @@
+.. include:: ../en/case-struct-union.rst

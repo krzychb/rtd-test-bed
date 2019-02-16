@@ -1,0 +1,1 @@
+.. include:: ../en/test-diagrams.rst
