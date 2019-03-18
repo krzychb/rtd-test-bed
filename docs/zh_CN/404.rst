@@ -1,0 +1,15 @@
+Welcome to rtd-test-bed's documentation!
+========================================
+:link_to_translation:`en:[English]`
+
+* `About This Site <https://github.com/krzychb/rtd-test-bed#rtd-test-bed>`_
+
+
+The page you are requesting does not exist
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+
