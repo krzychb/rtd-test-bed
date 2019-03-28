@@ -154,7 +154,7 @@ extensions = ['breathe',
 
 # Set up font for blockdiag, nwdiag, rackdiag and packetdiag
 blockdiag_fontpath = '../_static/DejaVuSans.ttf'
-seqdiag_fontpath = '../_static/DejaVuSans.ttf'
+seqdiag_fontpath = '../_static/PingFang_SC_Regular.ttf'
 actdiag_fontpath = '../_static/DejaVuSans.ttf'
 nwdiag_fontpath = '../_static/DejaVuSans.ttf'
 rackdiag_fontpath = '../_static/DejaVuSans.ttf'

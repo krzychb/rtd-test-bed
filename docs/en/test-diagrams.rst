@@ -827,3 +827,27 @@ Bring this code to the `interactive shell <http://interactive.blockdiag.com/seqd
         DEVICE -> CLIENT [label="Close Connection"];
     }
 
+.. seqdiag::
+    :caption: Typical Provisioning Process
+    :align: center
+
+    seqdiag blufi {
+        activation = none;
+        node_width = 80;
+        node_height = 60;
+        edge_length = 380;
+        span_height = 10;
+        default_fontsize = 12; 
+
+        Phone <- ESP32 [label="广播"];
+        Phone -> ESP32 [label="建立 GATT 链接"];
+        Phone <- ESP32 [label="协商密钥"];
+        Phone -> ESP32 [label="协商密钥"];
+        Phone -> ESP32 [label="CTRL: 设置 ESP32 手机安全模式"];
+        Phone -> ESP32 [label="DATA: SSID"];
+        Phone -> ESP32 [label="DATA: Password"];
+        Phone -> ESP32 [label="DATA: 其他信息，如 CA 认证"];
+        Phone -> ESP32 [label="CTRL: 连接到 AP"];
+        Phone <- ESP32 [label="DATA: 连接状态报告"];
+    }
+
