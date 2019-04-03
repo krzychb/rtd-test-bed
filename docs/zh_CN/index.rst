@@ -9,6 +9,7 @@ Welcome to rtd-test-bed's documentation!
     :caption: Custom Tests
 
     test-diagrams
+    test-fonts-on-diagrams
     case-tables
 
 .. toctree::
@@ -19,6 +20,8 @@ Welcome to rtd-test-bed's documentation!
     api-guides/ulp-cmake
     api-guides/ulp_instruction_set
     api-guides/ulp_macros
+    严重错误 <api-guides/fatal-errors>
+
 
     api-reference/kconfig
     api-reference/error-codes
