@@ -5,8 +5,8 @@ Test Case - Test Fonts on Diagrams
 blockdiag
 ---------
 
-blockdiag - example 1
-"""""""""""""""""""""
+blockdiag - 示例 1
+""""""""""""""""""
 
 .. blockdiag::
     :caption: 紧急处理程序流程图
@@ -50,11 +50,11 @@ blockdiag - example 1
 
 
 
-blockdiag - example 2
-"""""""""""""""""""""
+blockdiag - 示例 2
+""""""""""""""""""
 
 .. blockdiag::
-    :caption: Wi-Fi Programming Model
+    :caption: Wi-Fi 编程模型
     :align: center
 
     blockdiag wifi-programming-model {
@@ -68,39 +68,39 @@ blockdiag - example 2
         default_group_color = none;
 
         # node labels
-        TCP_STACK [label="TCP\n stack", fontsize=12];
-        EVNT_TASK [label="Event\n task", fontsize=12];
-        APPL_TASK [label="Application\n task", width = 120, fontsize=12];
-        WIFI_DRV  [label="Wi-Fi\n Driver", width = 120, fontsize=12];
+        TCP_STACK [label="TCP\n 协议栈", fontsize=12];
+        EVNT_TASK [label="Event\n 任务", fontsize=12];
+        APPL_TASK [label="Application\n 任务", width = 120, fontsize=12];
+        WIFI_DRV  [label="Wi-Fi\n 驱动", width = 120, fontsize=12];
         KNOT [shape=none];
 
         # node connections + labels
-        TCP_STACK -> EVNT_TASK [label=event];
-        EVNT_TASK -> APPL_TASK [label="callback\n or event"];
+        TCP_STACK -> EVNT_TASK [label="事件"];
+        EVNT_TASK -> APPL_TASK [label="回调\n 或事件"];
 
         # arrange nodes vertically
         group {
-           label = "default handler";
+           label = "默认处理程序";
            orientation = portrait;
-           EVNT_TASK <- WIFI_DRV [label=event];
+           EVNT_TASK <- WIFI_DRV [label="事件"];
         }
 
         # intermediate node
         group {
-            label = "user handler";
+            label = "用户处理程序";
             orientation = portrait;
             APPL_TASK -- KNOT;
         }
-        WIFI_DRV <- KNOT [label="API\n call"];
+        WIFI_DRV <- KNOT [label="API\n 调用"];
     }
 
 
-blockdiag - example 3
-"""""""""""""""""""""
+blockdiag - 示例 3
+""""""""""""""""""
 
 .. blockdiag::
     :scale: 75
-    :caption: I2C command link - master write example
+    :caption: I2C 命令列表 - 以主机写为例
     :align: center
 
     blockdiag i2c-command-link-master-write { 
@@ -145,10 +145,10 @@ blockdiag - example 3
         11 [class=spacer]; a11 [class=cmdlink]; 
 
         # labels
-        f0 [label="Data n times", shape=note, color=yellow];
-        b1 [label=Master, shape=note, color=lightyellow]; c1 [label=START]; d1 [label="Slave Address"]; f1 [label=Data]; h1 [label=STOP];
-        b2 [label=Slave, shape=note, color=lightyellow]; e2 [label=ACK]; g2 [label=ACK];  
-        a4 [shape=note, label=Commands, color=yellow]; 
+        f0 [label="连续发送 n 次数据", shape=note, color=yellow];
+        b1 [label="主机", shape=note, color=lightyellow]; c1 [label="开始"]; d1 [label="从机地址"]; f1 [label="数据"]; h1 [label="停止"];
+        b2 [label="从机", shape=note, color=lightyellow]; e2 [label="ACK"]; g2 [label="ACK"];  
+        a4 [shape=note, label="命令", color=yellow]; 
         a5 [label="cmd = i2c_cmd_link_create()", numbered = 1]; 
         a6 [label="i2c_master_start(cmd)", numbered = 2]; 
         a7 [label="i2c_master_write_byte(cmd, Address, ACK)", numbered = 3]; 
@@ -170,11 +170,11 @@ blockdiag - example 3
 seqdiag
 -------
 
-seqdiag - example 1
-"""""""""""""""""""
+seqdiag - 示例 1
+""""""""""""""""
 
 .. seqdiag::
-    :caption: Typical Provisioning Process
+    :caption: 配网的一般流程
     :align: center
 
     seqdiag blufi {
@@ -191,18 +191,18 @@ seqdiag - example 1
         Phone -> ESP32 [label="协商密钥"];
         Phone -> ESP32 [label="CTRL: 设置 ESP32 手机安全模式"];
         Phone -> ESP32 [label="DATA: SSID"];
-        Phone -> ESP32 [label="DATA: Password"];
+        Phone -> ESP32 [label="DATA: 密码"];
         Phone -> ESP32 [label="DATA: 其他信息，如 CA 认证"];
         Phone -> ESP32 [label="CTRL: 连接到 AP"];
         Phone <- ESP32 [label="DATA: 连接状态报告"];
     }
 
 
-seqdiag - example 2
-"""""""""""""""""""
+seqdiag - 示例 2
+""""""""""""""""
 
 .. seqdiag::
-    :caption: Security1
+    :caption: 安全
     :align: center
 
     seqdiag security1 {
@@ -214,23 +214,23 @@ seqdiag - example 2
         default_shape = roundedbox;
         default_fontsize = 12;
 
-        CLIENT  [label = "Client"];
-        DEVICE  [label = "Device"];
+        CLIENT  [label = "客户端"];
+        DEVICE  [label = "设备"];
 
         === Security 1 ===
-        CLIENT -> CLIENT [label = "Generate\nKey Pair", rightnote = "{cli_privkey, cli_pubkey} = curve25519_keygen()"];
+        CLIENT -> CLIENT [label = "生成密钥对", rightnote = "{cli_privkey, cli_pubkey} = curve25519_keygen()"];
         CLIENT -> DEVICE [label = "SessionCmd0(cli_pubkey)"];
-        DEVICE -> DEVICE [label = "Generate\nKey Pair", leftnote = "{dev_privkey, dev_pubkey} = curve25519_keygen()"];
+        DEVICE -> DEVICE [label = "生成密钥对", leftnote = "{dev_privkey, dev_pubkey} = curve25519_keygen()"];
         DEVICE -> DEVICE [label = "Initialization\nVector", leftnote = "dev_rand = gen_16byte_random()"];
-        DEVICE -> DEVICE [label = "Shared Key", leftnote = "shared_key(No PoP) = curve25519(dev_privkey, cli_pubkey) \nshared_key(with PoP) = curve25519(dev_privkey, cli_pubkey) ^ SHA256(pop)"];
+        DEVICE -> DEVICE [label = "共享密钥", leftnote = "shared_key(No PoP) = curve25519(dev_privkey, cli_pubkey) \nshared_key(with PoP) = curve25519(dev_privkey, cli_pubkey) ^ SHA256(pop)"];
         DEVICE -> CLIENT [label = "SessionResp0(dev_pubkey, dev_rand)"];
-        CLIENT -> CLIENT [label = "Shared Key", rightnote = "shared_key(No PoP) = curve25519(cli_privkey, dev_pubkey)\nshared_key(with PoP) = curve25519(cli_privkey, dev_pubkey) ^ SHA256(pop)"];
-        CLIENT -> CLIENT [label = "Verification\nToken", rightnote = "cli_verify = aes_ctr_enc(key=shared_key, data=dev_pubkey, nonce=dev_rand)"];
+        CLIENT -> CLIENT [label = "共享密钥", rightnote = "shared_key(No PoP) = curve25519(cli_privkey, dev_pubkey)\nshared_key(with PoP) = curve25519(cli_privkey, dev_pubkey) ^ SHA256(pop)"];
+        CLIENT -> CLIENT [label = "校验口令", rightnote = "cli_verify = aes_ctr_enc(key=shared_key, data=dev_pubkey, nonce=dev_rand)"];
         CLIENT -> DEVICE [label = "SessionCmd1(cli_verify)"];
-        DEVICE -> DEVICE [label = "Verify Client", leftnote = "check (dev_pubkey == aes_ctr_dec(cli_verify...)"];
-        DEVICE -> DEVICE [label = "Verification\nToken", leftnote = "dev_verify = aes_ctr_enc(key=shared_key, data=cli_pubkey, nonce=(prev-context))"];
+        DEVICE -> DEVICE [label = "验证客户端", leftnote = "check (dev_pubkey == aes_ctr_dec(cli_verify...)"];
+        DEVICE -> DEVICE [label = "校验口令", leftnote = "dev_verify = aes_ctr_enc(key=shared_key, data=cli_pubkey, nonce=(prev-context))"];
         DEVICE -> CLIENT [label = "SessionResp1(dev_verify)"];
-        CLIENT -> CLIENT [label = "Verify Device", rightnote = "check (cli_pubkey == aes_ctr_dec(dev_verify...)"];
+        CLIENT -> CLIENT [label = "验证设备", rightnote = "check (cli_pubkey == aes_ctr_dec(dev_verify...)"];
     }
 
 
@@ -238,7 +238,7 @@ seqdiag - example 3
 """""""""""""""""""
 
  .. seqdiag::
-    :caption: Sample Wi-Fi Event Scenarios in AP Mode
+    :caption: Wi-Fi 工作在 AP 模式下的示例
     :align: center
 
     seqdiag sample-scenarios-soft-ap-mode {
@@ -250,45 +250,45 @@ seqdiag - example 3
         default_shape = roundedbox;
         default_fontsize = 12; 
 
-        MAIN_TASK  [label = "Main\ntask"]; 
-        APP_TASK   [label = "App\ntask"];
-        EVENT_TASK [label = "Event\ntask"];
-        LwIP_TASK  [label = "LwIP\ntask"];
-        WIFI_TASK  [label = "Wi-Fi\ntask"];
+        MAIN_TASK  [label = "Main\n任务"]; 
+        APP_TASK   [label = "App\n任务"];
+        EVENT_TASK [label = "Event\n任务"];
+        LwIP_TASK  [label = "LwIP\n任务"];
+        WIFI_TASK  [label = "Wi-Fi\n任务"];
 
-        === 1. Init Phase ===
-        MAIN_TASK  ->  LwIP_TASK   [label="1.1> Create / init LwIP"];
-        MAIN_TASK  ->  EVENT_TASK  [label="1.2> Create / init event"];
-        MAIN_TASK  ->  WIFI_TASK   [label="1.3> Create / init Wi-Fi"];
-        MAIN_TASK  ->  APP_TASK    [label="1.4> Create app task"];
-        === 2. Configure Phase ===
-        MAIN_TASK  ->  WIFI_TASK   [label="2> Configure Wi-Fi"];
-        === 3. Start Phase ===
-        MAIN_TASK  ->  WIFI_TASK   [label="3.1> Start Wi-Fi"];
+        === 1. 初始化阶段 ===
+        MAIN_TASK  ->  LwIP_TASK   [label="1.1> 创建 / 初始化 LwIP"];
+        MAIN_TASK  ->  EVENT_TASK  [label="1.2> 创建 / 初始化 event"];
+        MAIN_TASK  ->  WIFI_TASK   [label="1.3> 创建 / 初始化 Wi-Fi"];
+        MAIN_TASK  ->  APP_TASK    [label="1.4> 创建 app 任务"];
+        === 2. 配置阶段 ===
+        MAIN_TASK  ->  WIFI_TASK   [label="2> 配置 Wi-Fi"];
+        === 3. 启动阶段 ===
+        MAIN_TASK  ->  WIFI_TASK   [label="3.1> 启动 Wi-Fi"];
         EVENT_TASK <-  WIFI_TASK   [label="3.2> SYSTEM_EVENT_AP_START"];
         APP_TASK   <-  EVENT_TASK  [label="3.3> SYSTEM_EVENT_AP_START"];
-        === 4. Connect Phase ===
+        === 4. 连接阶段 ===
         EVENT_TASK <-  WIFI_TASK   [label="4.1> SYSTEM_EVENT_AP_STA_CONNECTED"];
         APP_TASK   <- EVENT_TASK   [label="4.2> SYSTEM_EVENT_AP_STA_CONNECTED"];
-        === 5. Disconnect Phase ===
+        === 5. 断开连接阶段 ===
         EVENT_TASK <-  WIFI_TASK   [label="5.1> SYSTEM_EVENT_STA_DISCONNECTED"];
         APP_TASK   <-  EVENT_TASK  [label="5.2> SYSTEM_EVENT_STA_DISCONNECTED"];
-        APP_TASK   ->  APP_TASK    [label="5.3> disconnect handling"];
-        === 6. Deinit Phase ===
-        APP_TASK   ->  WIFI_TASK   [label="6.1> Disconnect Wi-Fi"];
-        APP_TASK   ->  WIFI_TASK   [label="6.2> Stop Wi-Fi"];
-        APP_TASK   ->  WIFI_TASK   [label="6.3> Deinit Wi-Fi"];
+        APP_TASK   ->  APP_TASK    [label="5.3> 处理断开连接"];
+        === 6. 去初始化阶段 ===
+        APP_TASK   ->  WIFI_TASK   [label="6.1> 断开 Wi-Fi 连接"];
+        APP_TASK   ->  WIFI_TASK   [label="6.2> 停止 Wi-Fi"];
+        APP_TASK   ->  WIFI_TASK   [label="6.3> 去初始化 Wi-Fi"];
     }
 
 
 packetdiag
 ----------
 
-packetdiag - example 1
-""""""""""""""""""""""
+packetdiag - 示例 1
+"""""""""""""""""""
 
 .. packetdiag::
-    :caption: NVS Page Structure
+    :caption: NVS 页面结构
     :align: center
 
     packetdiag nvs_page_structure {
@@ -297,13 +297,13 @@ packetdiag - example 1
         node_height = 32
         default_fontsize = 12
 
-        0-3: State\n(4)
-        4-7: Seq. no.\n(4)
-        8-27: Unused (20)
-        28-31: CRC32\n(4)
-        32-63: Entry state bitmap (32)  
-        64-95: Entry 0 (32)
-        96-127: Entry 1 (32)
+        0-3: 状态\n(4)
+        4-7: 序列号\n(4)
+        8-27: 保留 (20)
+        28-31: CRC32 校验值\n(4)
+        32-63: 状态位映射 (32)  
+        64-95: 条目 0 (32)
+        96-127: 条目 1 (32)
         128-191: --- [colheight = 2]
-        192-223: Entry 125 (32)
+        192-223: 条目 125 (32)
     }
