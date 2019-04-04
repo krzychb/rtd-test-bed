@@ -20,7 +20,6 @@ Welcome to rtd-test-bed's documentation!
     api-guides/ulp-cmake
     api-guides/ulp_instruction_set
     api-guides/ulp_macros
-    api-guides/fatal-errors
 
     api-reference/kconfig
     api-reference/error-codes
