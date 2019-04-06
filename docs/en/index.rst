@@ -32,10 +32,6 @@ Welcome to rtd-test-bed's documentation!
 
     case-struct-union
 
-.. toctree::
-    :hidden:
-
-    404
 
 Indices and tables
 ==================

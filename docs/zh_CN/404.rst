@@ -14,5 +14,6 @@
     :align: center
     :alt: 抱歉，无法找到您想访问的页面。
     :figclass: align-center
-   
+    :figwidth: 100 %
+
 * :ref:`genindex`
