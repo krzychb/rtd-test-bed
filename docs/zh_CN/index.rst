@@ -21,7 +21,6 @@ Welcome to rtd-test-bed's documentation!
     api-guides/ulp_instruction_set
     api-guides/ulp_macros
 
-    api-reference/kconfig
     api-reference/error-codes
     api-reference/storage/wear-levelling
     api-reference/storage/fatfs
