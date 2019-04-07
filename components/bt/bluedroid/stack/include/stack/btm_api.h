@@ -169,8 +169,6 @@ typedef void (tBTM_VS_EVT_CB) (UINT8 len, UINT8 *p);
 */
 typedef void (tBTM_CMPL_CB) (void *p1);
 
-typedef void (tBTM_INQ_DIS_CB) (uint32_t num_dis);
-
 /* VSC callback function for notifying an application that a synchronous
 ** BTM function is complete. The pointer contains the address of any returned data.
 */
@@ -678,6 +676,7 @@ typedef struct {
     tBTM_STATUS status;
     UINT8       num_resp;       /* Number of results from the current inquiry */
 } tBTM_INQUIRY_CMPL;
+
 
 /* Structure returned with remote name  request */
 typedef struct {

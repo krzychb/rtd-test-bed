@@ -78,9 +78,7 @@ const UINT8 btm_pm_md_comp_matrix[BTM_PM_NUM_SET_MODES * BTM_PM_NUM_SET_MODES] =
 /* function prototype */
 static int btm_pm_find_acl_ind(BD_ADDR remote_bda);
 static tBTM_STATUS btm_pm_snd_md_req( UINT8 pm_id, int link_ind, tBTM_PM_PWR_MD *p_mode );
-#if (!CONFIG_BT_STACK_NO_LOG)
 static const char *mode_to_string(tBTM_PM_MODE mode);
-#endif
 
 /*
 #ifdef BTM_PM_DEBUG
@@ -952,7 +950,6 @@ tBTM_CONTRL_STATE BTM_PM_ReadControllerState(void)
     }
 }
 
-#if (!CONFIG_BT_STACK_NO_LOG)
 static const char *mode_to_string(tBTM_PM_MODE mode)
 {
     switch (mode) {
@@ -963,4 +960,3 @@ static const char *mode_to_string(tBTM_PM_MODE mode)
     default:               return "UNKNOWN";
     }
 }
-#endif

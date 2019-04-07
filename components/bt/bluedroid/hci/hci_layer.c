@@ -317,11 +317,7 @@ static void event_command_ready(fixed_queue_t *queue)
 
     wait_entry = fixed_queue_dequeue(queue);
 
-    if(wait_entry->opcode == HCI_HOST_NUM_PACKETS_DONE 
-#if (BLE_ADV_REPORT_FLOW_CONTROL == TRUE)
-    || wait_entry->opcode == HCI_VENDOR_BLE_ADV_REPORT_FLOW_CONTROL
-#endif
-    ){
+    if(wait_entry->opcode == HCI_HOST_NUM_PACKETS_DONE){
         packet_fragmenter->fragment_and_dispatch(wait_entry->command);
         osi_free(wait_entry->command);
         osi_free(wait_entry);

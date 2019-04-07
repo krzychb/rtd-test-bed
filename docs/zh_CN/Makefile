@@ -1,2 +1,2 @@
-LANGUAGE=zh_CN
+LANGUAGE=en
 include ../docs_common.mk
