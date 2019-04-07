@@ -9,7 +9,8 @@ blockdiag - 示例 1
 """"""""""""""""""
 
 .. blockdiag::
-    :caption: 紧急处理程序流程图
+    :scale: 75%
+    :caption: 紧急处理程序流程图 (click to enlarge)
     :align: center
     
     blockdiag panic-handler {
@@ -99,8 +100,8 @@ blockdiag - 示例 3
 """"""""""""""""""
 
 .. blockdiag::
-    :scale: 75
-    :caption: I2C 命令列表 - 以主机写为例
+    :scale: 75%
+    :caption: I2C 命令列表 - 以主机写为例 (click to enlarge)
     :align: center
 
     blockdiag i2c-command-link-master-write { 
