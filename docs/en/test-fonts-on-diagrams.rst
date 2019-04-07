@@ -23,13 +23,13 @@ blockdiag - example 1
         print_error_cause [label = "Print error/\nexception cause"];
         use_jtag [label = "Send signal to\nJTAG debugger", shape=roundedbox];
         dump_registers [label = "Print registers\nand backtrace"];
-        check_coredump [label = "Core dump\nenabled?", shape=flowchart.condition];
+        check_coredump [label = "Core dump\nenabled?", shape=diamond, width=160, height=80];
         do_coredump [label = "Core dump\nto UART or Flash"];
-        check_gdbstub [label = "GDB Stub\nenabled?", shape=flowchart.condition];
+        check_gdbstub [label = "GDB Stub\nenabled?", shape=diamond, width=160, height=80];
         do_gdbstub [label = "Start GDB Stub", shape=roundedbox];
         halt [label = "Halt", shape=roundedbox];
         reboot [label = "Reboot", shape=roundedbox];
-        check_halt [label = "Halt?", shape=flowchart.condition];
+        check_halt [label = "Halt?", shape=diamond, width=160, height=80];
 
         group {cpu_exception, sys_check};
 

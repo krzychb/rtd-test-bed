@@ -24,13 +24,13 @@ blockdiag - 示例 1
         print_error_cause [label = "打印出错原因"];
         use_jtag [label = "发送信号给 JTAG 调试器", shape=roundedbox];
         dump_registers [label = "Print registers\nand backtrace"];
-        check_coredump [label = "使能 Core dump?", shape=flowchart.condition];
+        check_coredump [label = "使能 Core dump?", shape=diamond, width=160, height=80];
         do_coredump [label = "Core dump 到 UART 或者 Flash"];
-        check_gdbstub [label = "使能 GDB Stub?", shape=flowchart.condition];
+        check_gdbstub [label = "使能 GDB Stub?", shape=diamond, width=160, height=80];
         do_gdbstub [label = "启动 GDB Stub", shape=roundedbox];
         halt [label = "暂停", shape=roundedbox];
         reboot [label = "重启", shape=roundedbox];
-        check_halt [label = "暂停?", shape=flowchart.condition];
+        check_halt [label = "暂停?", shape=diamond, width=160, height=80];
 
         group {cpu_exception, sys_check};
 
