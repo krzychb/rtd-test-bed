@@ -9,7 +9,8 @@ blockdiag - example 1
 """""""""""""""""""""
 
 .. blockdiag::
-    :caption: Panic Handler Flowchart
+    :scale: 75%
+    :caption: Panic Handler Flowchart (click to enlarge)
     :align: center
     
     blockdiag panic-handler {
@@ -98,8 +99,8 @@ blockdiag - example 3
 """""""""""""""""""""
 
 .. blockdiag::
-    :scale: 75
-    :caption: I2C command link - master write example
+    :scale: 75%
+    :caption: I2C command link - master write example (click to enlarge)
     :align: center
 
     blockdiag i2c-command-link-master-write { 
