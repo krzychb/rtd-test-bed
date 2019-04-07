@@ -1,6 +1,6 @@
 # rtd-test-bed
 
-[![Documentation Status](https://readthedocs.org/projects/rtd-test-bed/badge/?version=latest)](http://rtd-test-bed.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.com/projects/espressif-rtd-test-bed/badge/?version=latest)](https://espressif-rtd-test-bed.readthedocs-hosted.com/en/latest/)
 
 This site has been established to isolate and test various issues with documentation build using the following components:
 
