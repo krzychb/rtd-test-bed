@@ -40,5 +40,5 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     ('index', 'ReadtheDocsTemplate.tex', u'ESP-IDF 编程指南',
-     u'Read the Docs', 'manual'),
+     u'2016 - 2019 乐鑫信息科技（上海）股份有限公司', 'manual'),
 ]
