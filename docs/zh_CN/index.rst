@@ -19,8 +19,6 @@ ESP-IDF 编程指南
    English version of docs is using pdflatex 
    that does not have this limitation.
 
-.. |快速入门| image:: ../_static/get-started.gif
-
 .. |Get Started| image:: ../_static/get-started.gif
    :width: 199
    :height: 199
