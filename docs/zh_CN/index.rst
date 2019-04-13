@@ -5,33 +5,45 @@ ESP-IDF 编程指南
 这里是乐鑫 IoT 开发框架 (`esp-idf <https://github.com/espressif/esp-idf>`_) 的文档中心。ESP-IDF 是 `ESP32 <https://www.espressif.com/zh-hans/products/hardware/esp32/overview>`_ 芯片的官方开发框架。
 
 ==================  ==================  ==================
-|快速入门|           |API 参考|          |H/W 参考| 
+|快速入门|_          |API 参考|_         |H/W 参考|_
 ------------------  ------------------  ------------------
-`快速入门`           `API 参考`          `H/W 参考` 
+`快速入门`_          `API 参考`_         `H/W 参考`_
 ------------------  ------------------  ------------------
-|API 指南|           |贡献代码|          |相关资源| 
+|API 指南|_          |贡献代码|_         |相关资源|_
 ------------------  ------------------  ------------------
-`API 指南`           `贡献代码`          `相关资源` 
+`API 指南`_          `贡献代码`_         `相关资源`_
 ==================  ==================  ==================
 
 
 .. |快速入门| image:: ../_static/get-started.gif
-
+   :width: 199
+   :height: 199
+.. _快速入门: get-started/index.html
 
 .. |API 参考| image:: ../_static/api-reference.gif
-
+   :width: 199
+   :height: 199
+.. _API 参考: api-reference/index.html
 
 .. |H/W 参考| image:: ../_static/hw-reference.gif
-
+   :width: 199
+   :height: 199
+.. _H/W 参考: hw-reference/index.html
 
 .. |API 指南| image:: ../_static/api-guides.gif
-
+   :width: 199
+   :height: 199
+.. _API 指南: api-guides/index.html
 
 .. |贡献代码| image:: ../_static/contribute.gif
-
+   :width: 199
+   :height: 199
+.. _贡献代码: contribute/index.html
 
 .. |相关资源| image:: ../_static/resources.gif
-
+   :width: 199
+   :height: 199
+.. _相关资源: resources.html
 
 
 .. toctree::
