@@ -5,13 +5,13 @@ ESP-IDF 编程指南
 这里是乐鑫 IoT 开发框架 (`esp-idf <https://github.com/espressif/esp-idf>`_) 的文档中心。ESP-IDF 是 `ESP32 <https://www.espressif.com/zh-hans/products/hardware/esp32/overview>`_ 芯片的官方开发框架。
 
 ==================  ==================  ==================
-|Get Started|_      |API Reference|_    |HW Reference|_
+|Get Started|       |API Reference|     |H/W Reference|
 ------------------  ------------------  ------------------
-`Get Started`_      `API Reference`_    `HW Reference`_
+Get Started         API Reference       H/W Reference
 ------------------  ------------------  ------------------
-|API Guides|_       |Contribute|_       |Resources|_
+|API Guides|        |Contribute|        |Resources|
 ------------------  ------------------  ------------------
-`API Guides`_       `Contribute`_       `Resources`_
+API Guides          Contribute          Resources
 ==================  ==================  ==================
 
 .. Width and height parameters below are required for xelatex
@@ -22,32 +22,26 @@ ESP-IDF 编程指南
 .. |Get Started| image:: ../_static/get-started.gif
    :width: 199
    :height: 199
-.. _Get Started: get-started/index.html
 
 .. |API Reference| image:: ../_static/api-reference.gif
    :width: 199
    :height: 199
-.. _API Reference: api-reference/index.html
 
-.. |HW Reference| image:: ../_static/hw-reference.gif
+.. |H/W Reference| image:: ../_static/hw-reference.gif
    :width: 199
    :height: 199
-.. _HW Reference: hw-reference/index.html
 
 .. |API Guides| image:: ../_static/api-guides.gif
    :width: 199
    :height: 199
-.. _API Guides: api-guides/index.html
 
 .. |Contribute| image:: ../_static/contribute.gif
    :width: 199
    :height: 199
-.. _Contribute: contribute/index.html
 
 .. |Resources| image:: ../_static/resources.gif
    :width: 199
    :height: 199
-.. _Resources: resources.html
 
 
 .. toctree::
