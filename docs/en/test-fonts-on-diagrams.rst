@@ -9,7 +9,7 @@ blockdiag - example 1
 """""""""""""""""""""
 
 .. blockdiag::
-    :scale: 75%
+    :scale: 100%
     :caption: Panic Handler Flowchart (click to enlarge)
     :align: center
     
@@ -17,20 +17,22 @@ blockdiag - example 1
         orientation = portrait;
         edge_layout = flowchart;
         default_group_color = white;
+        node_width = 160;
+        node_height = 60;
 
         cpu_exception [label = "CPU Exception", shape=roundedbox];
         sys_check [label = "Cache error,\nInterrupt WDT,\nabort()", shape=roundedbox];
-        check_ocd [label = "JTAG debugger\nconnected?", shape=diamond, width=160, height=80];
+        check_ocd [label = "JTAG debugger\nconnected?", shape=diamond, height=80];
         print_error_cause [label = "Print error/\nexception cause"];
         use_jtag [label = "Send signal to\nJTAG debugger", shape=roundedbox];
         dump_registers [label = "Print registers\nand backtrace"];
-        check_coredump [label = "Core dump\nenabled?", shape=diamond, width=160, height=80];
+        check_coredump [label = "Core dump\nenabled?", shape=diamond, height=80];
         do_coredump [label = "Core dump\nto UART or Flash"];
-        check_gdbstub [label = "GDB Stub\nenabled?", shape=diamond, width=160, height=80];
+        check_gdbstub [label = "GDB Stub\nenabled?", shape=diamond, height=80];
         do_gdbstub [label = "Start GDB Stub", shape=roundedbox];
         halt [label = "Halt", shape=roundedbox];
         reboot [label = "Reboot", shape=roundedbox];
-        check_halt [label = "Halt?", shape=diamond, width=160, height=80];
+        check_halt [label = "Halt?", shape=diamond, height=80];
 
         group {cpu_exception, sys_check};
 
@@ -99,7 +101,7 @@ blockdiag - example 3
 """""""""""""""""""""
 
 .. blockdiag::
-    :scale: 75%
+    :scale: 100%
     :caption: I2C command link - master write example (click to enlarge)
     :align: center
 
@@ -202,6 +204,7 @@ seqdiag - example 2
 """""""""""""""""""
 
 .. seqdiag::
+    :scale: 100%
     :caption: Security1
     :align: center
 
@@ -238,6 +241,7 @@ seqdiag - example 3
 """""""""""""""""""
 
  .. seqdiag::
+    :scale: 100%
     :caption: Sample Wi-Fi Event Scenarios in AP Mode
     :align: center
 

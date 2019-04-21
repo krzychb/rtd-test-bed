@@ -9,7 +9,7 @@ blockdiag - 示例 1
 """"""""""""""""""
 
 .. blockdiag::
-    :scale: 75%
+    :scale: 100%
     :caption: 紧急处理程序流程图 (click to enlarge)
     :align: center
     
@@ -17,20 +17,22 @@ blockdiag - 示例 1
         orientation = portrait;
         edge_layout = flowchart;
         default_group_color = white;
+        node_width = 160;
+        node_height = 60;
 
         cpu_exception [label = "CPU 异常", shape=roundedbox];
         sys_check [label = "Cache 错误,\nInterrupt WDT,\nabort()", shape=roundedbox];
-        check_ocd [label = "JTAG 调试器\n已连接?", shape=diamond, width=160, height=80];
+        check_ocd [label = "JTAG 调试器\n已连接?", shape=diamond, height=80];
         print_error_cause [label = "打印出错原因"];
         use_jtag [label = "发送信号给 JTAG 调试器", shape=roundedbox];
         dump_registers [label = "Print registers\nand backtrace"];
-        check_coredump [label = "使能 Core dump?", shape=diamond, width=160, height=80];
-        do_coredump [label = "Core dump 到 UART 或者 Flash"];
-        check_gdbstub [label = "使能 GDB Stub?", shape=diamond, width=160, height=80];
+        check_coredump [label = "使能\nCore dump?", shape=diamond, height=80];
+        do_coredump [label = "Core dump\n到 UART 或者 Flash"];
+        check_gdbstub [label = "使能 GDB Stub?", shape=diamond, height=80];
         do_gdbstub [label = "启动 GDB Stub", shape=roundedbox];
         halt [label = "暂停", shape=roundedbox];
         reboot [label = "重启", shape=roundedbox];
-        check_halt [label = "暂停?", shape=diamond, width=160, height=80];
+        check_halt [label = "暂停?", shape=diamond, height=80];
 
         group {cpu_exception, sys_check};
 
@@ -71,8 +73,8 @@ blockdiag - 示例 2
         # node labels
         TCP_STACK [label="TCP\n 协议栈", fontsize=12];
         EVNT_TASK [label="Event\n 任务", fontsize=12];
-        APPL_TASK [label="Application\n 任务", width = 120, fontsize=12];
-        WIFI_DRV  [label="Wi-Fi\n 驱动", width = 120, fontsize=12];
+        APPL_TASK [label="Application\n 任务", width=120, fontsize=12];
+        WIFI_DRV  [label="Wi-Fi\n 驱动", width=120, fontsize=12];
         KNOT [shape=none];
 
         # node connections + labels
@@ -100,7 +102,7 @@ blockdiag - 示例 3
 """"""""""""""""""
 
 .. blockdiag::
-    :scale: 75%
+    :scale: 100%
     :caption: I2C 命令列表 - 以主机写为例 (click to enlarge)
     :align: center
 
@@ -239,7 +241,8 @@ seqdiag - example 3
 """""""""""""""""""
 
  .. seqdiag::
-    :caption: Wi-Fi 工作在 AP 模式下的示例
+    :scale: 100%
+    :caption: Wi-Fi 工作在 AP 模式下的示例 (click to enlarge)
     :align: center
 
     seqdiag sample-scenarios-soft-ap-mode {
