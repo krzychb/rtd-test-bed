@@ -21,6 +21,7 @@ PROJECT_NAME = "ESP32 Programming Guide"
 ## and used to include in API reference documentation
 
 INPUT = \
+    ../../components/bt/bluedroid/api/include/api/esp_avrc_api.h \
     ../../components/bt/bluedroid/api/include/api/esp_a2dp_api.h \
     ../../components/bt/bluedroid/api/include/api/esp_bt_defs.h \
     ../../components/ulp/include/esp32/ulp.h \

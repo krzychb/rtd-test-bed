@@ -11,6 +11,7 @@ Welcome to rtd-test-bed's documentation!
     test-diagrams
     test-fonts-on-diagrams
     case-tables
+    case-invalid-def
 
 .. toctree::
     :maxdepth: 1
