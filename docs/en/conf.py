@@ -10,6 +10,7 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath('..'))
 from conf_common import *  # noqa: F401, F403 - need to make available everything from common
+from local_util import download_file  # noqa: E402 - need to import from common folder
 
 # General information about the project.
 project = u'ESP-IDF Programming Guide'
@@ -19,23 +20,14 @@ copyright = u'2016 - 2019, Espressif Systems (Shanghai) CO., LTD'
 # for a list of supported languages.
 language = 'en'
 
-# -- Options for LaTeX output ---------------------------------------------
+# Download font file that is stored on a separate server to save on esp-idf repository size.
+print("Downloading font file")
+download_file('https://dl.espressif.com/dl/esp-idf/docs/_static/DejaVuSans.ttf', '../_static')
 
-latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    # 'papersize': 'letterpaper',
-    #
-    # The font size ('10pt', '11pt' or '12pt').
-    # 'pointsize': '10pt',
-    #
-    # Additional stuff for the LaTeX preamble.
-    # 'preamble': '',
-}
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    ('index', 'ReadtheDocsTemplate.tex', u'ESP-IDF Programming Guide',
-     u'2016 - 2019, Espressif Systems (Shanghai) CO., LTD', 'manual'),
-]
+# Set up font for blockdiag, nwdiag, rackdiag and packetdiag
+blockdiag_fontpath = '../_static/DejaVuSans.ttf'
+seqdiag_fontpath = '../_static/DejaVuSans.ttf'
+actdiag_fontpath = '../_static/DejaVuSans.ttf'
+nwdiag_fontpath = '../_static/DejaVuSans.ttf'
+rackdiag_fontpath = '../_static/DejaVuSans.ttf'
+packetdiag_fontpath = '../_static/DejaVuSans.ttf'

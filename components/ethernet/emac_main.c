@@ -79,6 +79,7 @@ static bool pause_send = false;
 #ifdef CONFIG_PM_ENABLE
 static esp_pm_lock_handle_t s_pm_lock;
 #endif
+ESP_EVENT_DEFINE_BASE(ETH_EVENT);
 
 static esp_err_t emac_ioctl(emac_sig_t sig, emac_par_t par);
 esp_err_t emac_post(emac_sig_t sig, emac_par_t par);
@@ -325,6 +326,7 @@ static void emac_set_user_config_data(eth_config_t *config)
 #endif
     emac_config.emac_phy_get_partner_pause_enable = config->phy_get_partner_pause_enable;
     emac_config.emac_phy_power_enable = config->phy_power_enable;
+    emac_config.promiscuous_enable = config->promiscuous_enable;
 }
 
 static void emac_enable_intr()
@@ -823,6 +825,13 @@ static void emac_start(void *param)
 
     emac_mac_init();
 
+    /* check if enable promiscuous mode */
+    if(emac_config.promiscuous_enable){
+        emac_enable_promiscuous();
+    }else{
+        emac_disable_promiscuous();
+    }
+
     emac_enable_intr();
 
     emac_config.emac_status = EMAC_RUNTIME_START;
@@ -1067,7 +1076,7 @@ esp_err_t IRAM_ATTR emac_post(emac_sig_t sig, emac_par_t par)
 
 esp_err_t esp_eth_init(eth_config_t *config)
 {
-    esp_event_set_default_eth_handlers();
+    tcpip_adapter_set_default_eth_handlers();
     return esp_eth_init_internal(config);
 }
 

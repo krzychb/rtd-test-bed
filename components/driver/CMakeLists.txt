@@ -22,6 +22,12 @@ set(COMPONENT_SRCS "can.c"
                    "uart.c")
 set(COMPONENT_ADD_INCLUDEDIRS "include")
 set(COMPONENT_PRIV_INCLUDEDIRS "include/driver")
-set(COMPONENT_REQUIRES esp_ringbuf)
+set(COMPONENT_REQUIRES esp_ringbuf soc) #cannot totally hide soc headers, since there are a lot arguments in the driver are chip-dependent
 
 register_component()
+
+
+if(GCC_NOT_5_2_0)
+    # uses C11 atomic feature
+    set_source_files_properties(spi_master.c PROPERTIES COMPILE_FLAGS -std=gnu11)
+endif()

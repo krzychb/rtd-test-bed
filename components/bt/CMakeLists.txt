@@ -123,6 +123,7 @@ if(CONFIG_BT_ENABLED)
                    "bluedroid/btc/profile/std/a2dp/btc_a2dp_source.c"
                    "bluedroid/btc/profile/std/a2dp/btc_av.c"
                    "bluedroid/btc/profile/std/avrc/btc_avrc.c"
+                   "bluedroid/btc/profile/std/avrc/bta_avrc_co.c"
                    "bluedroid/btc/profile/std/gap/btc_gap_ble.c"
                    "bluedroid/btc/profile/std/gap/btc_gap_bt.c"
                    "bluedroid/btc/profile/std/gatt/btc_gatt_common.c"
@@ -273,15 +274,15 @@ if(CONFIG_BT_ENABLED)
 endif()
 
 # requirements can't depend on config
-set(COMPONENT_PRIV_REQUIRES nvs_flash)
+set(COMPONENT_PRIV_REQUIRES nvs_flash soc)
 
 register_component()
 
 if(CONFIG_BT_ENABLED)
     if(GCC_NOT_5_2_0)
-        component_compile_options(-Wno-implicit-fallthrough -Wno-unused-const-variable)
+        target_compile_options(${COMPONENT_LIB} PRIVATE -Wno-implicit-fallthrough -Wno-unused-const-variable)
     endif()
 
-    target_link_libraries(${COMPONENT_TARGET} "-L${CMAKE_CURRENT_LIST_DIR}/lib")
-    target_link_libraries(${COMPONENT_TARGET} btdm_app)
+    target_link_libraries(${COMPONENT_LIB} "-L${CMAKE_CURRENT_LIST_DIR}/lib")
+    target_link_libraries(${COMPONENT_LIB} btdm_app)
 endif()

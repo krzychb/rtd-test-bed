@@ -14,6 +14,5 @@ Please use menu on the left to navigate through documentation contents. Optional
     :align: center
     :alt: We're sorry. The page you requested could not be found.
     :figclass: align-center
-    :figwidth: 100 %
-
+   
 * :ref:`genindex`

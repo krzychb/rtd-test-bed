@@ -445,7 +445,8 @@ Python 2.7 安装程序将尝试配置 Windows，将 ``.py`` 文件与 Python 2 
 
 .. code-block:: none
 
-    [GARBAGE]
+    e���)(Xn@�y.!��(�PW+)��Hn9a؅/9�!�t5��P�~�k��e�ea�5�jA
+    ~zY��Y(1�,1�� e���)(Xn@�y.!Dr�zY(�jpi�|�+z5Ymvp
 
 此时，请您：
 

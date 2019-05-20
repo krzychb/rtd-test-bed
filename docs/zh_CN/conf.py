@@ -10,6 +10,7 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath('..'))
 from conf_common import *  # noqa: F401, F403 - need to make available everything from common
+from local_util import download_file  # noqa: E402 - need to import from common folder
 
 # General information about the project.
 project = u'ESP-IDF 编程指南'
@@ -19,26 +20,14 @@ copyright = u'2016 - 2019 乐鑫信息科技（上海）股份有限公司'
 # for a list of supported languages.
 language = 'zh_CN'
 
-# -- Options for LaTeX output ---------------------------------------------
+# Download font file that is stored on a separate server to save on esp-idf repository size.
+print("Downloading font file")
+download_file('https://dl.espressif.com/dl/esp-idf/docs/_static/NotoSansSC-Regular.otf', '../_static')
 
-latex_engine = 'xelatex'
-latex_use_xindy = False
-
-latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    # 'papersize': 'letterpaper',
-    #
-    # The font size ('10pt', '11pt' or '12pt').
-    # 'pointsize': '10pt',
-    #
-    # Additional stuff for the LaTeX preamble.
-    'preamble': '\\usepackage[UTF8]{ctex}\n',
-}
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    ('index', 'ReadtheDocsTemplate.tex', u'ESP-IDF 编程指南',
-     u'2016 - 2019 乐鑫信息科技（上海）股份有限公司', 'manual'),
-]
+# Set up font for blockdiag, nwdiag, rackdiag and packetdiag
+blockdiag_fontpath = '../_static/NotoSansSC-Regular.otf'
+seqdiag_fontpath = '../_static/NotoSansSC-Regular.otf'
+actdiag_fontpath = '../_static/NotoSansSC-Regular.otf'
+nwdiag_fontpath = '../_static/NotoSansSC-Regular.otf'
+rackdiag_fontpath = '../_static/NotoSansSC-Regular.otf'
+packetdiag_fontpath = '../_static/NotoSansSC-Regular.otf'

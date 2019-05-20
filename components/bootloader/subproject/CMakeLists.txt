@@ -10,30 +10,24 @@ if(NOT IDF_PATH)
         "in by the parent build process.")
 endif()
 
-set(COMPONENTS bootloader esptool_py esp32 partition_table soc bootloader_support log spi_flash micro-ecc main efuse)
+if(NOT IDF_TARGET)
+    message(FATAL_ERROR "Bootloader subproject expects the IDF_TARGET variable to be passed "
+        "in by the parent build process.")
+endif()
+
+set(COMPONENTS bootloader esptool_py partition_table soc bootloader_support log spi_flash micro-ecc main efuse)
 set(BOOTLOADER_BUILD 1)
-add_definitions(-DBOOTLOADER_BUILD=1)
-
-set(COMPONENT_REQUIRES_COMMON log esp32 soc esp_rom esp_common xtensa)
-
 include("${IDF_PATH}/tools/cmake/project.cmake")
+set(common_req log esp_rom esp_common xtensa)
+if (CONFIG_LEGACY_INCLUDE_COMMON_HEADERS)
+    list(APPEND common_req soc)
+endif()
+idf_build_set_property(__COMPONENT_REQUIRES_COMMON "${common_req}")
+idf_build_set_property(__OUTPUT_SDKCONFIG 0)
 project(bootloader)
 
-target_linker_script(bootloader.elf
-    "main/esp32.bootloader.ld"
-    "main/esp32.bootloader.rom.ld"
-)
-
-# as cmake won't attach linker args to a header-only library, attach
-# linker args directly to the bootloader.elf
-set(ESP32_BOOTLOADER_LINKER_SCRIPTS
-    "../../esp_rom/esp32/ld/esp32.rom.ld"
-    "../../esp_rom/esp32/ld/esp32.rom.spiram_incompatible_fns.ld"
-    "../../esp32/ld/esp32.peripherals.ld")
-
-target_linker_script(bootloader.elf ${ESP32_BOOTLOADER_LINKER_SCRIPTS})
-
-target_link_libraries(bootloader.elf gcc)
+idf_build_set_property(COMPILE_DEFINITIONS "-DBOOTLOADER_BUILD=1" APPEND)
+idf_build_set_property(COMPILE_OPTIONS "-fno-stack-protector" APPEND)
 
 set(secure_boot_signing_key ${SECURE_BOOT_SIGNING_KEY})
 

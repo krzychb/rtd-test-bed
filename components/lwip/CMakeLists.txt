@@ -1,14 +1,15 @@
 set(COMPONENT_ADD_INCLUDEDIRS
     include/apps
+    include/apps/sntp
     lwip/src/include
     port/esp32/include
     port/esp32/include/arch
-    include_compat
     )
 
 set(COMPONENT_SRCS "apps/dhcpserver/dhcpserver.c"
                    "apps/ping/esp_ping.c"
                    "apps/ping/ping.c"
+                   "apps/sntp/sntp.c"
                    "lwip/src/api/api_lib.c"
                    "lwip/src/api/api_msg.c"
                    "lwip/src/api/err.c"
@@ -129,7 +130,7 @@ set(COMPONENT_ADD_LDFRAGMENTS linker.lf)
 register_component()
 
 # lots of LWIP source files evaluate macros that check address of stack variables
-component_compile_options(-Wno-address)
+target_compile_options(${COMPONENT_LIB} PRIVATE -Wno-address)
 
 if(GCC_NOT_5_2_0)
     set_source_files_properties(

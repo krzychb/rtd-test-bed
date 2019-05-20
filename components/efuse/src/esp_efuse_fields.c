@@ -39,7 +39,7 @@ uint8_t esp_efuse_get_chip_ver(void)
 // Returns chip package from efuse
 uint32_t esp_efuse_get_pkg_ver(void)
 {
-    uint32_t pkg_ver;
+    uint32_t pkg_ver = 0;
     esp_efuse_read_field_blob(ESP_EFUSE_CHIP_VER_PKG, &pkg_ver, 3);
     return pkg_ver;
 }
@@ -104,6 +104,7 @@ void esp_efuse_write_random_key(uint32_t blk_wdata0_reg)
     } else { // 3/4 Coding Scheme
         bootloader_fill_random(raw, sizeof(raw));
         esp_err_t r = esp_efuse_apply_34_encoding(raw, buf, sizeof(raw));
+        (void) r;
         assert(r == ESP_OK);
     }
 
