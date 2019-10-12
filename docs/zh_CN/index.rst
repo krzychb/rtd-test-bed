@@ -1,6 +1,6 @@
 ESP-IDF 编程指南
 =========================
-:link_to_translation:`en:[English]`
+:link_to_translation:`en:[English]` | `[文档反馈] <http://101.37.68.193/espressif/zh-hans/company/contact/documentation_feedback?docId=3723&sections=家>`_
 
 这里是乐鑫 IoT 开发框架 (`esp-idf <https://github.com/espressif/esp-idf>`_) 的文档中心。ESP-IDF 是 `ESP32 <https://www.espressif.com/zh-hans/products/hardware/esp32/overview>`_ 芯片的官方开发框架。
 
